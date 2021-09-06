@@ -1,0 +1,31 @@
+name: DCTEST - Docker build and push
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  docker_build:
+    name: Build & publish Management API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Login to container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ secrets.docker_registry_server }}
+          username: ${{ secrets.docker_registry_username }}
+          password: ${{ secrets.docker_registry_password }}
+
+      - name: Build & publish image
+        env:
+          DOCKER_BUILDKIT: 1
+          REPOSITORY_NAME: ${{ secrets.docker_registry_server }}/microsoft/azuretre/management-api
+        run: |
+          TAG=$GITHUB_SHA
+
+          docker build -t ${{ env.REPOSITORY_NAME}}:$TAG management_api_app/
+          docker push ${{ env.REPOSITORY_NAME}}:$TAG
