@@ -6,8 +6,6 @@ on:
       - management_api_app/**/*
   push:
     branches: [ develop, main, denicep/acr-auth-issue ]
-    paths:
-      - management_api_app/**/*
   workflow_dispatch:
 
 jobs:
