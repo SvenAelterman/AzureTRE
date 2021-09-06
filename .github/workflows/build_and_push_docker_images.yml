@@ -11,6 +11,10 @@ on:
       - .github/workflows/**
   workflow_dispatch:
 
+concurrency: 
+  group: "${{ github.workflow }}-${{ github.head_ref }}"
+  cancel-in-progress: true
+
 jobs:
   docker_build:
     name: Build & publish Management API
