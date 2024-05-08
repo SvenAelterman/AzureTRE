@@ -12,28 +12,24 @@
         <meta name="author" content="Microsoft">
       
       
-        <link rel="canonical" href="https://microsoft.github.io/AzureTRE/unreleased/troubleshooting-faq/debug-api/">
+        <link rel="canonical" href="https://microsoft.github.io/AzureTRE/unreleased/tre-templates/workspace-services/mysql/">
       
       
-        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../api-logs-deployment-center/">
-      
-      
-      <link rel="icon" href="../../assets/ms_icon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <link rel="icon" href="../../../assets/ms_icon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>Enabling Debugging for the API - Azure TRE</title>
+        <title>MySQL Workspace Service - Azure TRE</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
@@ -75,14 +71,13 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
   
     
-    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
         
-        <a href="#enabling-debug-mode-on-the-api" class="md-skip">
+        <a href="#mysql-workspace-service" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +92,7 @@
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
-  <a href="../../..">
+  <a href="../../../..">
     <strong>Click here to go to latest.</strong>
   </a>
 </script>
@@ -115,9 +110,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Azure TRE" class="md-header__button md-logo" aria-label="Azure TRE" data-md-component="logo">
+    <a href="../../.." title="Azure TRE" class="md-header__button md-logo" aria-label="Azure TRE" data-md-component="logo">
       
-  <img src="../../assets/ms_icon.png" alt="logo">
+  <img src="../../../assets/ms_icon.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -134,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enabling Debugging for the API
+              MySQL Workspace Service
             
           </span>
         </div>
@@ -142,6 +137,7 @@
     </div>
     
       
+    
     
     
     
@@ -187,7 +183,7 @@
         <a href="https://github.com/microsoft/AzureTre/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -220,9 +216,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Azure TRE" class="md-nav__button md-logo" aria-label="Azure TRE" data-md-component="logo">
+    <a href="../../.." title="Azure TRE" class="md-nav__button md-logo" aria-label="Azure TRE" data-md-component="logo">
       
-  <img src="../../assets/ms_icon.png" alt="logo">
+  <img src="../../../assets/ms_icon.png" alt="logo">
 
     </a>
     Azure TRE
@@ -232,7 +228,7 @@
       <a href="https://github.com/microsoft/AzureTre/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -247,6 +243,7 @@
   
   
   
+  
     
     
       
@@ -260,7 +257,6 @@
       
         
       
-    
     
     
     
@@ -268,13 +264,12 @@
       
         
         
-        
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -305,8 +300,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/user-roles/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/user-roles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,6 +321,7 @@
   
   
   
+  
     
     
       
@@ -338,13 +335,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
@@ -373,8 +368,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/architecture/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -393,8 +389,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/networking/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/networking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -413,8 +410,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/tre-resources-breakdown/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/tre-resources-breakdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -433,8 +431,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/airlock/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/airlock/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -453,8 +452,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../azure-tre-overview/cost-reporting/" class="md-nav__link">
+      <a href="../../../azure-tre-overview/cost-reporting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -481,8 +481,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/terms-definitions/" class="md-nav__link">
+      <a href="../../../using-tre/terms-definitions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -508,6 +509,7 @@
   
   
   
+  
     
     
       
@@ -531,7 +533,6 @@
       
         
       
-    
     
     
     
@@ -539,13 +540,12 @@
       
         
         
-        
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tre-admins/setup-instructions/" class="md-nav__link ">
+            <a href="../../../tre-admins/setup-instructions/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -576,8 +576,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/prerequisites/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/prerequisites/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,8 +597,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/deployment-repo/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/deployment-repo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,8 +618,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/ad-tenant-choices/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/ad-tenant-choices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -636,8 +639,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/setup-auth-entities/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/setup-auth-entities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,6 +660,7 @@
   
   
   
+  
     
     
       
@@ -663,13 +668,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
@@ -698,6 +701,7 @@
   
   
   
+  
     
     
       
@@ -705,13 +709,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_1" >
@@ -740,8 +742,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/manual-pre-deployment-steps/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/manual-pre-deployment-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -760,8 +763,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/manual-deployment/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/manual-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -788,6 +792,7 @@
   
   
   
+  
     
     
       
@@ -795,13 +800,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2" >
@@ -830,8 +833,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/cicd-pre-deployment-steps/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/cicd-pre-deployment-steps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -850,8 +854,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/cicd-deployment/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/cicd-deployment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,8 +891,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/configuring-shared-services/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/configuring-shared-services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,8 +912,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/ui-install-base-workspace/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/ui-install-base-workspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,8 +933,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/ui-install-ws-and-ur/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/ui-install-ws-and-ur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -953,6 +961,7 @@
   
   
   
+  
     
     
       
@@ -966,7 +975,6 @@
       
         
       
-    
     
     
     
@@ -974,13 +982,12 @@
       
         
         
-        
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../using-tre/" class="md-nav__link ">
+            <a href="../../../using-tre/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1011,8 +1018,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/templates/" class="md-nav__link">
+      <a href="../../../using-tre/templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,6 +1039,7 @@
   
   
   
+  
     
     
       
@@ -1044,7 +1053,6 @@
       
         
       
-    
     
     
     
@@ -1052,13 +1060,12 @@
       
         
         
-        
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../using-tre/tre-for-research/" class="md-nav__link ">
+            <a href="../../../using-tre/tre-for-research/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1089,8 +1096,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/tre-for-research/using-vms/" class="md-nav__link">
+      <a href="../../../using-tre/tre-for-research/using-vms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,8 +1117,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/tre-for-research/importing-exporting-data-airlock/" class="md-nav__link">
+      <a href="../../../using-tre/tre-for-research/importing-exporting-data-airlock/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,8 +1138,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/tre-for-research/review-airlock-request/" class="md-nav__link">
+      <a href="../../../using-tre/tre-for-research/review-airlock-request/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,6 +1174,7 @@
   
   
   
+  
     
     
       
@@ -1175,13 +1186,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
@@ -1210,6 +1219,7 @@
   
   
   
+  
     
     
       
@@ -1219,13 +1229,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
@@ -1254,8 +1262,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspaces/base/" class="md-nav__link">
+      <a href="../../workspaces/base/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1274,8 +1283,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspaces/unrestricted/" class="md-nav__link">
+      <a href="../../workspaces/unrestricted/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1294,8 +1304,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspaces/airlock-import-review/" class="md-nav__link">
+      <a href="../../workspaces/airlock-import-review/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1322,6 +1333,7 @@
   
   
   
+  
     
     
       
@@ -1341,13 +1353,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
@@ -1376,8 +1386,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/azure-ml/" class="md-nav__link">
+      <a href="../azure-ml/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1396,8 +1407,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/gitea/" class="md-nav__link">
+      <a href="../gitea/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,8 +1428,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/guacamole/" class="md-nav__link">
+      <a href="../guacamole/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1436,8 +1449,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/inner-eye/" class="md-nav__link">
+      <a href="../inner-eye/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1456,8 +1470,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/mlflow/" class="md-nav__link">
+      <a href="../mlflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1476,8 +1491,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/health_services/" class="md-nav__link">
+      <a href="../health_services/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,8 +1512,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/databricks/" class="md-nav__link">
+      <a href="../databricks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1516,8 +1533,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/workspace-services/ohdsi/" class="md-nav__link">
+      <a href="../ohdsi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1544,6 +1562,7 @@
   
   
   
+  
     
     
       
@@ -1555,13 +1574,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
@@ -1590,8 +1607,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/shared-services/gitea/" class="md-nav__link">
+      <a href="../../shared-services/gitea/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1610,8 +1628,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/shared-services/nexus/" class="md-nav__link">
+      <a href="../../shared-services/nexus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1630,8 +1649,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/shared-services/cyclecloud/" class="md-nav__link">
+      <a href="../../shared-services/cyclecloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1650,8 +1670,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/shared-services/airlock-notifier/" class="md-nav__link">
+      <a href="../../shared-services/airlock-notifier/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1678,6 +1699,7 @@
   
   
   
+  
     
     
       
@@ -1689,13 +1711,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
@@ -1724,8 +1744,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/user-resources/guacamole-windows-vm/" class="md-nav__link">
+      <a href="../../user-resources/guacamole-windows-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1744,8 +1765,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/user-resources/guacamole-linux-vm/" class="md-nav__link">
+      <a href="../../user-resources/guacamole-linux-vm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1764,8 +1786,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/user-resources/import-reviewvm/" class="md-nav__link">
+      <a href="../../user-resources/import-reviewvm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1784,8 +1807,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/user-resources/export-reviewvm/" class="md-nav__link">
+      <a href="../../user-resources/export-reviewvm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1818,7 +1842,6 @@
       
   
   
-    
   
   
     
@@ -1835,13 +1858,11 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1855,7 +1876,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Technical Guide
@@ -1867,6 +1888,7 @@
   
   
   
+  
     
     
       
@@ -1890,13 +1912,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
@@ -1925,8 +1945,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/start-stop/" class="md-nav__link">
+      <a href="../../../tre-admins/start-stop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1945,8 +1966,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/environment-variables/" class="md-nav__link">
+      <a href="../../../tre-admins/environment-variables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1965,8 +1987,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/tear-down/" class="md-nav__link">
+      <a href="../../../tre-admins/tear-down/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1985,6 +2008,7 @@
   
   
   
+  
     
     
       
@@ -1994,13 +2018,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" >
@@ -2029,8 +2051,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/auth/" class="md-nav__link">
+      <a href="../../../tre-admins/auth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2049,8 +2072,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/auth-manual/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/auth-manual/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2069,6 +2093,7 @@
   
   
   
+  
     
     
       
@@ -2082,13 +2107,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_3" >
@@ -2117,8 +2140,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/application_admin/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/application_admin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2137,8 +2161,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/api/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2157,8 +2182,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/client/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/client/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2177,8 +2203,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/test-account/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/test-account/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2197,8 +2224,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/identities/workspace/" class="md-nav__link">
+      <a href="../../../tre-admins/identities/workspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2233,8 +2261,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/registering-templates/" class="md-nav__link">
+      <a href="../../../tre-admins/registering-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2253,6 +2282,7 @@
   
   
   
+  
     
     
       
@@ -2260,13 +2290,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6" >
@@ -2295,8 +2323,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/installing-base-workspace/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/installing-base-workspace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2315,8 +2344,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/installing-workspace-service-and-user-resource/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/installing-workspace-service-and-user-resource/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2343,8 +2373,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/upgrading-tre/" class="md-nav__link">
+      <a href="../../../tre-admins/upgrading-tre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2363,8 +2394,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/upgrading-resources/" class="md-nav__link">
+      <a href="../../../tre-admins/upgrading-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2383,8 +2415,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/configure-airlock-review/" class="md-nav__link">
+      <a href="../../../tre-admins/configure-airlock-review/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2403,8 +2436,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/supported-clouds/" class="md-nav__link">
+      <a href="../../../tre-admins/supported-clouds/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2431,6 +2465,7 @@
   
   
   
+  
     
     
       
@@ -2440,13 +2475,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
@@ -2475,8 +2508,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../using-tre/local-development/local-development/" class="md-nav__link">
+      <a href="../../../using-tre/local-development/local-development/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2495,6 +2529,7 @@
   
   
   
+  
     
     
       
@@ -2516,7 +2551,6 @@
       
         
       
-    
     
     
     
@@ -2524,13 +2558,12 @@
       
         
         
-        
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tre-developers/" class="md-nav__link ">
+            <a href="../../../tre-developers/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2561,8 +2594,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/api/" class="md-nav__link">
+      <a href="../../../tre-developers/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2581,8 +2615,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/ui/" class="md-nav__link">
+      <a href="../../../tre-developers/ui/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2601,8 +2636,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/resource-processor/" class="md-nav__link">
+      <a href="../../../tre-developers/resource-processor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2621,8 +2657,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/end-to-end-tests/" class="md-nav__link">
+      <a href="../../../tre-developers/end-to-end-tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2641,8 +2678,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/letsencrypt/" class="md-nav__link">
+      <a href="../../../tre-developers/letsencrypt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2661,8 +2699,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/release/" class="md-nav__link">
+      <a href="../../../tre-developers/release/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2681,8 +2720,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-admins/setup-instructions/workflows/" class="md-nav__link">
+      <a href="../../../tre-admins/setup-instructions/workflows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,6 +2749,7 @@
   
   
   
+  
     
     
       
@@ -2718,13 +2759,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
@@ -2753,8 +2792,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-workspace-authors/authoring-workspace-templates/" class="md-nav__link">
+      <a href="../../../tre-workspace-authors/authoring-workspace-templates/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2773,8 +2813,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-workspace-authors/firewall-rules/" class="md-nav__link">
+      <a href="../../../tre-workspace-authors/firewall-rules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2793,6 +2834,7 @@
   
   
   
+  
     
     
       
@@ -2800,13 +2842,11 @@
       
         
       
-    
     
     
     
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3_3" >
@@ -2835,8 +2875,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/pipeline-templates/overview/" class="md-nav__link">
+      <a href="../../pipeline-templates/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2855,8 +2896,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-templates/pipeline-templates/pipeline-schema/" class="md-nav__link">
+      <a href="../../pipeline-templates/pipeline-schema/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2899,8 +2941,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../tre-developers/CLI/" class="md-nav__link">
+      <a href="../../../tre-developers/CLI/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2918,7 +2961,6 @@
                 
   
   
-    
   
   
     
@@ -2947,18 +2989,16 @@
     
     
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../troubleshooting-faq/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2975,7 +3015,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Troubleshooting FAQ
@@ -2988,27 +3028,18 @@
                 
   
   
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting-faq/debug-logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Enabling Debugging for the API
+    Enabling DEBUG logs
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -3019,8 +3050,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../api-logs-deployment-center/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/api-logs-deployment-center/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3039,8 +3071,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../troubleshooting-sb/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/troubleshooting-sb/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3059,8 +3092,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../app-insights-logs/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/app-insights-logs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3079,8 +3113,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../troubleshooting-rp/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/troubleshooting-rp/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3099,8 +3134,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../airlock-troubleshooting/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/airlock-troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3119,8 +3155,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../manually-editing-resources/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/manually-editing-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3139,8 +3176,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../cloud-init/" class="md-nav__link">
+      <a href="../../../troubleshooting-faq/cloud-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3174,8 +3212,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../../contributing/" class="md-nav__link">
+      <a href="../../../contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3208,6 +3247,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authenticating-to-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authenticating to MySQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-version-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upgrading to version 1.0.0
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3221,14 +3295,34 @@
                   
 
 
-<h1 id="enabling-debug-mode-on-the-api">Enabling DEBUG mode on the API</h1>
-<p>The API is by default configured to not show detailed error messages and stack trace when an error occurs. This is done to prevent leaking internal state to the outside world and to minimize information which an attacker could use against the deployed instance.</p>
-<p>However, you can enable debugging, by setting <code>DEBUG=true</code> in the configuration settings of the API using Azure portal.</p>
+<h1 id="mysql-workspace-service">MySQL Workspace Service</h1>
+<p>See: <a href="https://learn.microsoft.com/en-GB/azure/mysql/">MySQL Azure</a></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="../../workspaces/base/">A base workspace deployed</a></li>
+</ul>
+<ul>
+<li>
+<p>The MySQL workspace service container image needs building and pushing:</p>
+<p><code>make workspace_service_bundle BUNDLE=mysql</code></p>
+</li>
+</ul>
+<h2 id="authenticating-to-mysql">Authenticating to MySQL</h2>
 <ol>
-<li>Go to App Service for the API and select <strong>Settings &gt; Configuration</strong>.</li>
-<li>Click <strong>New Application Setting</strong>.</li>
-<li>in the new dialog box set <strong>Name=DEBUG</strong> and <strong>Value=true</strong></li>
+<li>Navigate to the MySQL workspace service using the <code>Mysql fqdn</code> from the details tab.</li>
+<li>Using the Password found in Key Vault and the Username <code>mysqladmin</code></li>
+<li>Connect to the MySQL server on a VM with the following command shown below
+   <code>mysql -h [fqdn] -u [username] -p [password]</code></li>
 </ol>
+<h2 id="upgrading-to-version-100">Upgrading to version 1.0.0</h2>
+<p>Migrating existing MySQL services to the major version 1.0.0 is not currently supported. This is due to the breaking change in the Terraform to migrate from the deprecated mysql_server to the new mysql_flexible_server.</p>
+
+
+
+
+
+
+
 
 
 
@@ -3239,6 +3333,7 @@
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -3267,10 +3362,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
     
   </body>
